@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>adivina el numero</title>
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="num.css">
+</head>
+<body style="background: #e1e1e1">
+    <div  class="social">                                                                    
+            <a title="Instagram" href="https://www.instagram.com/fabricabj_97/" target="_blank"><i class="fab fa-instagram ins"></i></a>
+            <a title="Facebook" href="https://www.facebook.com/fabricio.colavella" target="_blank"><i class="fab fa-facebook fac"></i></a>
+            <a title="GitHub" href="https://github.com/fabricolavella" target="_blank"><i class="fab fa-github git"></i></a>
+    </div>
+    <div class="modal fade" id="dialogo1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+               <div class="modal-header">
+                 <button type="button" class="close" data-dismiss="modal">X</button>
+               </div>
+               <div style="background: #a7ffeb;color:black">
+                   <div  class="modal-body" style="height: 600px;">
+                      <div class="row">
+                         
+                          <div id="paso1" style="background: #b2dfdb;padding: 20px"></div>
+                          <div class="col-md-12" align="center">
+                          <nav  aria-label="Page navigation example">
+                           <ul class="pagination justify-content-end">
+                                 <li class="page-item"><a class="page-link" href="#" onclick="paso1();">1</a></li>
+                                 <li class="page-item"><a class="page-link" href="#" onclick="paso2();">2</a></li>
+                                 <li class="page-item"><a class="page-link" href="#" onclick="paso3();">3</a></li>
+                               </ul>
+                             </div>
+                          </nav>
+                        </div>  
+                      </div>
+                    
+                   </div>
+               </div>  
+            </div>
+        </div>
+    </div>
+    <div class="inst"><a class="btn btn-primary bot" href="#"  data-toggle="modal" data-target="#dialogo1" onclick="paso1();">Instrucciones</a></div>
+    <div style="background: #212121;padding-top: 10px"> 
+      <h2 class="titulo" align="center">advina el numero</h2><br>
+      <hr>
+    </div>
+    <div style="padding-top: 20px" class="row" align="center">
+      <div class="col-md-12">
+      	<h4><strong>Ingrese el numero que la otra persona debe adivinar</strong></h4> 
+        <h5 id="oculto" hidden>los numeros se han ocultado para que la otra persona no los pueda ver</h5>
+        <h5 id="oculto2" hidden>numero generado exitosamente!</h5>
+      <form id="formulario1" class="formulario" name="f1" onsubmit="return minumero(this)">
+            <input id="n1"  type="text" size="1" onkeyup="this.value=Numeros(this.value)">
+            <input id="n2"  type="text" size="1" onkeyup="this.value=Numeros(this.value)">
+            <input id="n3"  type="text" size="1" onkeyup="this.value=Numeros(this.value)">
+            <input id="n4"  type="text" size="1" onkeyup="this.value=Numeros(this.value)">
+            <a id="btn1" href="#" class="btn btn-primary bot" onclick="minumero();">enviar</a>
+            <a id="btn2" type="submit" href="#" class="btn btn-primary bot" onclick="azar();">generar</a>
+      </form>
+      </div>
+      <div align="center" style="padding-top: 50px;" class="col-md-12">
+    
+      
+      <table width="50%">
+      <tr>
+      	<th>intentos</th>
+      	<th>resultados</th>
+      </tr>
+      <tr>
+      	<td><form id="formulario2" class="formulario" name="f2" onsubmit="return adivinar1(this)"> 
+            <input type="text" size="1" onkeyup="this.value=Numeros(this.value)" disabled> 
+            <input type="text" size="1" onkeyup="this.value=Numeros(this.value)" disabled>
+            <input type="text" size="1" onkeyup="this.value=Numeros(this.value)" disabled>
+            <input type="text" size="1" onkeyup="this.value=Numeros(this.value)" disabled>
+            <a id="boton1" href="#" class="btn btn-primary bot ad1" onclick="adivinar1();">enviar</a>
+            
+        </form></td>
+      	<td><h5 id="valor1"></h5></td>
+      </tr>
+      <tr>
+      	<td><form id="formulario3" class="formulario" name="f3"> 
+            <input type="text" size="1" onkeyup="this.value=Numeros(this.value)" disabled> 
+            <input type="text" size="1" onkeyup="this.value=Numeros(this.value)" disabled>
+            <input type="text" size="1" onkeyup="this.value=Numeros(this.value)" disabled>
+            <input type="text" size="1" onkeyup="this.value=Numeros(this.value)" disabled>
+            <a href="#" id="boton2" class="btn btn-primary bot ad2" onclick="adivinar2();">enviar</a>
+            
+        </form></td>
+      	<td><h5 id="valor2"></h5></td>
+      </tr>
+      <tr>
+      	<td><form id="formulario4" class="formulario" name="f4"> 
+            <input type="text" size="1" onkeyup="this.value=Numeros(this.value)" disabled> 
+            <input type="text" size="1" onkeyup="this.value=Numeros(this.value)" disabled>
+            <input type="text" size="1" onkeyup="this.value=Numeros(this.value)" disabled>
+            <input type="text" size="1" onkeyup="this.value=Numeros(this.value)" disabled>
+            <a id="boton3" href="#" class="btn btn-primary bot ad3" onclick="adivinar3();">enviar</a>
+            
+        </form></td>
+      	<td><h5 id="valor3"></h5></td>
+      </tr>
+      <tr>
+      	<td><form id="formulario5" class="formulario" name="f5"> 
+            <input type="text" size="1" onkeyup="this.value=Numeros(this.value)" disabled> 
+            <input type="text" size="1" onkeyup="this.value=Numeros(this.value)" disabled>
+            <input type="text" size="1" onkeyup="this.value=Numeros(this.value)" disabled>
+            <input type="text" size="1" onkeyup="this.value=Numeros(this.value)" disabled>
+            <a id="boton4" href="#" class="btn btn-primary bot ad4" onclick="adivinar4();">enviar</a>
+            
+        </form></td>
+      	<td><h5 id="valor4"></h5></td>
+      </tr>	
+      <tr>
+      	<td><form id="formulario6" class="formulario" name="f6"> 
+            <input type="text" size="1" onkeyup="this.value=Numeros(this.value)" disabled> 
+            <input type="text" size="1" onkeyup="this.value=Numeros(this.value)" disabled>
+            <input type="text" size="1" onkeyup="this.value=Numeros(this.value)" disabled>
+            <input type="text" size="1" onkeyup="this.value=Numeros(this.value)" disabled>
+            <a id="boton5" href="#" class="btn btn-primary bot ad5" onclick="adivinar5();">enviar</a>
+            
+        </form></td>
+      	<td><h5 id="valor5"></h5></td>
+      </tr>
+      <tr>
+      	<td><form id="formulario7" class="formulario" name="f7"> 
+            <input type="text" size="1" onkeyup="this.value=Numeros(this.value)" disabled> 
+            <input type="text" size="1" onkeyup="this.value=Numeros(this.value)" disabled>
+            <input type="text" size="1" onkeyup="this.value=Numeros(this.value)" disabled>
+            <input type="text" size="1" onkeyup="this.value=Numeros(this.value)" disabled>
+            <a id="boton6" href="#" class="btn btn-primary bot ad6" onclick="adivinar6();">enviar</a>
+            
+        </form></td>
+      	<td><h5 id="valor6"></h5></td>
+      </tr>	
+      <tr>
+      	<td><form id="formulario8" class="formulario" name="f8"> 
+            <input type="text" size="1" onkeyup="this.value=Numeros(this.value)" disabled> 
+            <input type="text" size="1" onkeyup="this.value=Numeros(this.value)" disabled>
+            <input type="text" size="1" onkeyup="this.value=Numeros(this.value)" disabled>
+            <input type="text" size="1" onkeyup="this.value=Numeros(this.value)" disabled>
+            <a id="boton7" href="#" class="btn btn-primary bot" onclick="adivinar7();">enviar</a>          
+        </form></td>
+      	<td><h5 id="valor7"></h5></td>
+      </tr>
+      </table>
+      <div style="padding-top: 40px">
+           <p id="nuevo"></p>
+      </div>
+      <div class="modal fade" id="mostrarmodal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+           <div class="modal-header" style="background: white">
+              <h3>Resultado</h3>
+           </div>
+           <div class="modal-body">
+              <h4 id="resultado"></h4>
+              <h4 id="inicio" hidden></h4>
+              <h4 id="finalizacion"></h4>
+              <h4 id="resultado2"></h4>
+       </div>
+           <div class="modal-footer">
+               <a href="#" data-dismiss="modal" class="btn btn-primary bot" onclick="Cerrar();">Cerrar</a>
+           </div>
+      </div>
+   </div>
+</div>
+      
+      
+      </div>
+    </div> 
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript" src="num.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/2be8605e79.js"></script>
+    	  
+</body>
+</html>
