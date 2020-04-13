@@ -301,6 +301,7 @@ n=$('#nuevo');
          $("#mostrarmodal").modal("show");
          resul.html("<strong style='color:green'>GANASTE</strong><br>el numero es:  "+n1+n2+n3+n4);
           document.getElementById('boton1').disabled=false;
+			document.getElementById('compartir').hidden=false;
 		      document.f2[0].disabled=true;document.f2[1].disabled=true;document.f2[2].disabled=true;document.f2[3].disabled=true;document.f3[0].disabled=true;document.f3[1].disabled=true;document.f3[2].disabled=true;document.f3[3].disabled=true;document.f4[0].disabled=true;document.f4[1].disabled=true;document.f4[2].disabled=true;document.f4[3].disabled=true;document.f5[0].disabled=true;document.f5[1].disabled=true;document.f5[2].disabled=true;document.f5[3].disabled=true;document.f6[0].disabled=true;document.f6[1].disabled=true;document.f6[2].disabled=true;document.f6[3].disabled=true;document.f7[0].disabled=true;document.f7[1].disabled=true;document.f7[2].disabled=true;document.f7[3].disabled=true;document.f8[0].disabled=true;document.f8[1].disabled=true;document.f8[2].disabled=true;document.f8[3].disabled=true;
 		      clear();
           $('.ad1').attr('onclick','adivinar1()');
